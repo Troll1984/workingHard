@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Hotel Anechka</title>
+</head>
+<body>
+      <div class="container">
+            <header>
+                <div class="logo">
+                  <img src="./src/assets/img/logo.jpg" alt="logo">
+                  <h1>My Austerities</h1>            
+                </div>
+                <div class="menu">
+                  <span id="menu">My ascetic</span>              
+                </div>
+            </header>
+            <main>
+              <div class="blockForm">
+                <form id="form-ascetic">
+                  <label for="name" data-i18n>Austerity Name</label>
+                  <input type="text"  id="name" name="name" >
+                  <label for="time" data-i18n>Duration</label>
+                  <input type="text" id="time" name="time" >
+                  <label for="result" data-i18n>Expected Result</label>
+                  <textarea id="result" name="result" rows="3" ></textarea>
+                  <button type="submit" data-i18n>Begin Austerity</button>
+                </form>
+              </div>
+             
+            </main>
+        </div>
+
+        <label for="language">Language / Мова</label>
+<select id="language">
+    <option value="en">English</option>
+    <option value="uk">Українська</option>
+</select>
+      
+ 
+   
+
+   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ru.js"></script>
+ 
+
+    <script type="module"  src="js/index.js"></script>
+</body>
+</html>

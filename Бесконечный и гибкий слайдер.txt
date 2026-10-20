@@ -1,0 +1,49 @@
+const image1 = document.querySelector('#image-1');
+const slider = document.querySelector('.wrap-slide');
+
+
+const time = 500;
+const interval = 3000;
+
+const slideOrigin = Array.from(image1.children);
+const origin = slideOrigin.length;
+
+const before = slideOrigin.map(img => img.cloneNode(true));
+const after = slideOrigin.map(img => img.cloneNode(true));
+image1.prepend(...before);
+image1.append(...after);
+const slides = Array.from(image1.children);
+let index = origin;
+let timer;
+
+function getSlide(animate = true) {
+    const slide = slides[index];
+    const slideCenter = slide.offsetLeft + slide.offsetWidth / 2;
+    const sliderCenter = slider.clientWidth / 2;
+    const move = slideCenter - sliderCenter;
+
+    image1.style.transition = animate ? `transform ${time}ms ease` : 'none';
+    image1.style.transform = `translateX(-${move}px)`;
+}
+
+function nextSlide() {
+    index++;
+    getSlide(true);
+    if(index === origin * 2) {
+        setTimeout(() => {
+            index = origin;
+            getSlide(false);
+        }, time);
+        
+    }
+}
+getSlide(false);
+timer = setInterval(nextSlide, interval);
+window.addEventListener('resize', () => {
+    getSlide(false);
+});
+
+
+
+
+

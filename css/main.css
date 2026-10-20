@@ -1,0 +1,129 @@
+body {
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: #af3232;
+}
+body > .btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  cursor: pointer;
+  background: green;
+}
+
+.save-ascetic {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 90%;
+  margin: 30px auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 10px 1fr 10px 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+@media (max-width: 1000px) {
+  .save-ascetic {
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 670px) {
+  .save-ascetic {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+}
+
+.ascetic-card {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 16px;
+  background: #966e32;
+}
+.ascetic-card h1 {
+  font-size: 2rem;
+}
+.ascetic-card h3 {
+  font-size: 1.3rem;
+}
+.ascetic-card progress {
+  width: 100%;
+  height: 12px;
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+  border-radius: 15px;
+  overflow: hidden;
+  background: #fff;
+}
+.ascetic-card progress::-webkit-progress-bar {
+  background: #fff;
+  border-radius: 15px;
+}
+.ascetic-card progress::-webkit-progress-value {
+  background: #1e831e;
+  border-radius: 15px;
+}
+.ascetic-card progress::-moz-progress-bar {
+  background: #569b36;
+  border-radius: 15px;
+}
+
+.ascetic-calendar {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: minmax(0, 1fr) clamp(2px, 0.5vw, 6px) minmax(0, 1fr) clamp(2px, 0.5vw, 6px) minmax(0, 1fr) clamp(2px, 0.5vw, 6px) minmax(0, 1fr) clamp(2px, 0.5vw, 6px) minmax(0, 1fr) clamp(2px, 0.5vw, 6px) minmax(0, 1fr) clamp(2px, 0.5vw, 6px) minmax(0, 1fr);
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  -ms-flex-line-pack: start;
+      align-content: start;
+  gap: clamp(2px, 0.5vw, 6px);
+  padding: 4px;
+  max-height: 250px;
+  overflow-y: auto;
+}
+.ascetic-calendar .calendar-day {
+  aspect-ratio: 1;
+  min-width: 0;
+  border: 1px solid #ddd8d0;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  font-size: clamp(11px, 2vw, 16px);
+}
+.ascetic-calendar .calendar-day:hover {
+  border-color: #647c59;
+}
+.ascetic-calendar .calendar-day.completed {
+  background: #647c59;
+  color: white;
+  border-color: #647c59;
+}
+.ascetic-calendar .empty-day {
+  aspect-ratio: 1;
+}
+
+.ascetic-card button:not(.calendar-day) {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
